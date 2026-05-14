@@ -1,0 +1,27 @@
+---
+import { services, site } from '../data/site';
+
+const base = Astro.site ?? new URL(site.url);
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
+  name: site.name,
+  url: site.url,
+  telephone: '+1-630-849-0115',
+  image: new URL('/og-image.png', base).href,
+  description: site.description,
+  areaServed: site.towns.map((town) => ({
+    '@type': 'City',
+    name: `${town}, IL`
+  })),
+  makesOffer: services.map((service) => ({
+    '@type': 'Offer',
+    itemOffered: {
+      '@type': 'Service',
+      name: service.title,
+      serviceType: service.title
+    }
+  }))
+};
+---
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

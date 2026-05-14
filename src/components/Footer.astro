@@ -1,0 +1,16 @@
+---
+import { site } from '../data/site';
+import Logo from './Logo.astro';
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <Logo />
+      <p>{site.serviceArea}</p>
+    </div>
+    <div class="footer-cta">
+      <p>Ready to clean up the yard?</p>
+      <a class="btn btn-dark" href={site.phoneHref}>Call {site.phoneDisplay}</a>
+    </div>
+  </div>
+</footer>

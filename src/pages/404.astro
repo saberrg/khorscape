@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="Page Not Found | Khorscape" canonicalPath="/404/">
+  <section class="section-shell not-found">
+    <div class="container centered-heading">
+      <p class="eyebrow">404</p>
+      <h1>That page is not here.</h1>
+      <p class="lead">If you need landscaping help in Naperville, call or text Khorscape directly.</p>
+      <a class="btn btn-primary" href={site.phoneHref}>Call {site.phoneDisplay}</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,139 @@
+---
+import { Image } from 'astro:assets';
+import frontBed from '../assets/images/front-bed-reset.jpg';
+import cleanupDetail from '../assets/images/yard-cleanup-detail.jpg';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { process, services, site } from '../data/site';
+---
+<BaseLayout>
+  <section class="hero section-shell" data-reveal>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Naperville outdoor cleanup</p>
+        <h1>Landscaping help for yards that need a clean reset.</h1>
+        <p class="lead">
+          Mowing, mulch, weeding, seasonal cleanup, brush and leaf help, and power washing for Naperville-area homes. Text a few photos and ask for a simple quote.
+        </p>
+        <div class="hero-actions" aria-label="Primary contact actions">
+          <a class="btn btn-primary" href={site.phoneHref}>Call {site.phoneDisplay}</a>
+          <a class="btn btn-secondary" href={site.smsHref}>Text photos for a quote</a>
+        </div>
+        <p class="microcopy">Small jobs welcome. Scope and price confirmed before work begins.</p>
+      </div>
+      <div class="hero-media" aria-label="Khorscape project photo">
+        <div class="photo-frame photo-frame-hero">
+          <Image
+            src={frontBed}
+            alt="Brick Naperville home with shrubs, a front landscape bed, and yard cleanup work in progress"
+            widths={[480, 720, 960, 1280]}
+            sizes="(min-width: 980px) 52vw, 100vw"
+            format="webp"
+            quality={78}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <div class="frame-label glass-card">
+            <span>Before the reset</span>
+            <strong>Clearer beds. Cleaner curb line.</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell services-section" id="services" data-reveal>
+    <div class="container section-heading split-heading">
+      <div>
+        <p class="eyebrow">Services</p>
+        <h2>Practical outdoor jobs, handled cleanly.</h2>
+      </div>
+      <p>
+        Khorscape is built for homeowners who need visible yard improvement without a long sales process.
+      </p>
+    </div>
+    <div class="container service-grid">
+      {services.map((service) => (
+        <article class="service-card">
+          <span class="service-rule" aria-hidden="true"></span>
+          <h3>{service.title}</h3>
+          <p>{service.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-shell proof-section" data-reveal>
+    <div class="container proof-grid">
+      <div class="proof-copy">
+        <p class="eyebrow">Photo-first quotes</p>
+        <h2>Send the yard. Get a clear next step.</h2>
+        <p>
+          Most outdoor jobs start with the same thing: a few photos, the address area, and what you want changed. From there, the work can stay direct: clean the bed, spread the mulch, edge the lawn, prep the brush, wash the surface.
+        </p>
+        <a class="text-link" href={site.smsHref}>Text Khorscape now</a>
+      </div>
+      <div class="proof-photos">
+        <figure class="photo-frame stacked-photo primary-photo">
+          <Image
+            src={cleanupDetail}
+            alt="Outdoor yard and landscape area ready for cleanup work"
+            widths={[360, 520, 720, 960]}
+            sizes="(min-width: 860px) 38vw, 100vw"
+            format="webp"
+            quality={76}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <figure class="note-card">
+          <span class="note-number">24h</span>
+          <figcaption>Fastest path: text photos, target areas, and preferred timing.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell process-section" id="process" data-reveal>
+    <div class="container section-heading centered-heading">
+      <p class="eyebrow">How it works</p>
+      <h2>No oversized sales process.</h2>
+      <p>Just the details needed to understand the job and make the yard look better.</p>
+    </div>
+    <div class="container process-grid">
+      {process.map((item) => (
+        <article class="process-card">
+          <span class="process-step">{item.step}</span>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-shell local-section" id="area" data-reveal>
+    <div class="container local-card">
+      <div>
+        <p class="eyebrow">Local service area</p>
+        <h2>Naperville first. Nearby suburbs when scheduling allows.</h2>
+      </div>
+      <div class="local-copy">
+        <p>{site.serviceArea}</p>
+        <p>
+          Need leaf cleanup, brush cleanup, or yard waste prep before pickup? Mention that when you call or text so the scope is clear from the start.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell final-cta" data-reveal>
+    <div class="container cta-card">
+      <p class="eyebrow">Start with one message</p>
+      <h2>Send the yard. We will help you decide what to do first.</h2>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href={site.phoneHref}>Call {site.phoneDisplay}</a>
+        <a class="btn btn-secondary" href={site.smsHref}>Text photos</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

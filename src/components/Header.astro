@@ -1,0 +1,18 @@
+---
+import { site } from '../data/site';
+import Logo from './Logo.astro';
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <Logo />
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#area">Area</a>
+    </nav>
+    <a class="header-phone" href={site.phoneHref} aria-label={`Call or text Khorscape at ${site.phoneDisplay}`}>
+      <span>Call/Text</span>
+      <strong>{site.phoneDisplay}</strong>
+    </a>
+  </div>
+</header>
