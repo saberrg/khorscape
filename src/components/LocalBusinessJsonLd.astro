@@ -8,7 +8,7 @@ const schema = {
   name: site.name,
   url: site.url,
   telephone: '+1-630-849-0115',
-  image: new URL('/og-image.png', base).href,
+  image: new URL(site.socialImage, base).href,
   description: site.description,
   areaServed: site.towns.map((town) => ({
     '@type': 'City',
