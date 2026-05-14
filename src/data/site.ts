@@ -8,6 +8,10 @@ export const site = {
   title: 'Khorscape | Naperville Landscaping, Lawn Mowing, Mulching & Power Washing',
   description:
     'Call or text Khorscape for landscaping help in Naperville, IL. Mulch installation, mowing, yard cleanups, weeding, brush and leaf cleanup, and power washing. Small jobs welcome.',
+  socialTitle: 'Khorscape | Naperville Landscaping & Yard Cleanups',
+  socialDescription:
+    'Mowing, mulch, weeding, seasonal cleanups, and power washing. Call or text 630-849-0115.',
+  socialImage: '/social/khorscape-preview-v2.png',
   serviceArea:
     'Serving Naperville and nearby areas including Lisle, Aurora, Warrenville, Bolingbrook, Plainfield, Woodridge, Wheaton, and Downers Grove.',
   towns: [
