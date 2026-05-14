@@ -1,7 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-import frontBed from '../assets/images/front-bed-reset.jpg';
-import cleanupDetail from '../assets/images/yard-cleanup-detail.jpg';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { process, services, site } from '../data/site';
 ---
@@ -22,17 +19,24 @@ import { process, services, site } from '../data/site';
       </div>
       <div class="hero-media" aria-label="Khorscape project photo">
         <div class="photo-frame photo-frame-hero">
-          <Image
-            src={frontBed}
-            alt="Brick Naperville home with shrubs, a front landscape bed, and yard cleanup work in progress"
-            widths={[480, 720, 960, 1280]}
-            sizes="(min-width: 980px) 52vw, 100vw"
-            format="webp"
-            quality={78}
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-          />
+          <picture>
+            <source
+              type="image/webp"
+              srcset="/images/front-bed-reset-480.webp 480w, /images/front-bed-reset-720.webp 720w, /images/front-bed-reset-960.webp 960w, /images/front-bed-reset-1280.webp 1280w"
+              sizes="(min-width: 980px) 52vw, 100vw"
+            />
+            <img
+              src="/images/front-bed-reset-1280.jpg"
+              srcset="/images/front-bed-reset-480.jpg 480w, /images/front-bed-reset-720.jpg 720w, /images/front-bed-reset-960.jpg 960w, /images/front-bed-reset-1280.jpg 1280w"
+              sizes="(min-width: 980px) 52vw, 100vw"
+              alt="Brick Naperville home with shrubs, a front landscape bed, and yard cleanup work in progress"
+              width="1280"
+              height="960"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </picture>
           <div class="frame-label glass-card">
             <span>Before the reset</span>
             <strong>Clearer beds. Cleaner curb line.</strong>
@@ -75,16 +79,23 @@ import { process, services, site } from '../data/site';
       </div>
       <div class="proof-photos">
         <figure class="photo-frame stacked-photo primary-photo">
-          <Image
-            src={cleanupDetail}
-            alt="Outdoor yard and landscape area ready for cleanup work"
-            widths={[360, 520, 720, 960]}
-            sizes="(min-width: 860px) 38vw, 100vw"
-            format="webp"
-            quality={76}
-            loading="lazy"
-            decoding="async"
-          />
+          <picture>
+            <source
+              type="image/webp"
+              srcset="/images/yard-cleanup-detail-360.webp 360w, /images/yard-cleanup-detail-520.webp 520w, /images/yard-cleanup-detail-720.webp 720w, /images/yard-cleanup-detail-960.webp 960w"
+              sizes="(min-width: 860px) 38vw, 100vw"
+            />
+            <img
+              src="/images/yard-cleanup-detail-960.jpg"
+              srcset="/images/yard-cleanup-detail-360.jpg 360w, /images/yard-cleanup-detail-520.jpg 520w, /images/yard-cleanup-detail-720.jpg 720w, /images/yard-cleanup-detail-960.jpg 960w"
+              sizes="(min-width: 860px) 38vw, 100vw"
+              alt="Outdoor yard and landscape area ready for cleanup work"
+              width="960"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         </figure>
         <figure class="note-card">
           <span class="note-number">24h</span>

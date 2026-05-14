@@ -5,7 +5,7 @@ Mobile-first Astro landing page for Khorscape, a Naperville-area landscaping and
 ## Stack
 
 - Astro static site
-- Local optimized images through `astro:assets`
+- Static, committed responsive images from `public/images`
 - Plain CSS with design tokens
 - No client framework and no heavy animation library
 
