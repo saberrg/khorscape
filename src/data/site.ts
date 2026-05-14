@@ -11,7 +11,7 @@ export const site = {
   socialTitle: 'Khorscape | Naperville Landscaping & Yard Cleanups',
   socialDescription:
     'Mowing, mulch, weeding, seasonal cleanups, and power washing. Call or text 630-849-0115.',
-  socialImage: '/social/khorscape-preview-v2.png',
+  socialImage: '/social/khorscape-preview-v3.png',
   serviceArea:
     'Serving Naperville and nearby areas including Lisle, Aurora, Warrenville, Bolingbrook, Plainfield, Woodridge, Wheaton, and Downers Grove.',
   towns: [
