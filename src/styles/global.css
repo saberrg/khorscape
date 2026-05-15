@@ -482,6 +482,54 @@
     font-size: 0.98rem;
   }
 
+  .transformations-section {
+    padding-block-start: clamp(3rem, 8vw, 6rem);
+  }
+
+  .transformation-grid {
+    display: grid;
+    gap: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .comparison-card {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .comparison-photo {
+    aspect-ratio: 4 / 3;
+  }
+
+  .comparison-badge {
+    position: absolute;
+    inset-block-start: 1rem;
+    inset-inline-start: 1rem;
+    z-index: 2;
+    border: 1px solid color-mix(in oklab, var(--color-surface), transparent 32%);
+    border-radius: var(--radius-pill);
+    padding: 0.55rem 0.75rem;
+    color: var(--color-surface);
+    background: color-mix(in oklab, var(--color-scrim), transparent 42%);
+    box-shadow: 0 0.75rem 1.75rem color-mix(in oklab, var(--color-scrim), transparent 74%);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    line-height: 1;
+    text-transform: uppercase;
+    backdrop-filter: blur(14px) saturate(1.1);
+  }
+
+  .comparison-badge-after {
+    background: color-mix(in oklab, var(--color-accent-strong), transparent 8%);
+  }
+
+  .comparison-card figcaption {
+    padding-inline: 0.35rem;
+    color: color-mix(in oklab, var(--color-muted), var(--color-ink) 12%);
+    font-size: 0.95rem;
+  }
+
   .proof-section {
     background: linear-gradient(180deg, transparent, color-mix(in oklab, var(--color-elevated), transparent 42%), transparent);
   }
@@ -690,6 +738,15 @@
 
     .service-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .transformation-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+    }
+
+    .comparison-card-after {
+      margin-block-start: clamp(1.25rem, 3vw, 2.5rem);
     }
   }
 
